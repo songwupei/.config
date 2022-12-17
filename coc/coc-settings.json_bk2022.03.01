@@ -1,0 +1,36 @@
+{
+	"coc.preferences.extensionUpdateCheck": "daily",
+	"suggest.noselect": true,
+	"suggest.enablePreselect": false,
+	"diagnostic.signOffset": 1,
+	"diagnostic.errorSign": "\uf467",
+	"diagnostic.warningSign": "\uf071",
+	"diagnostic.infoSign": "\uf129",
+	"diagnostic.hintSign": "\uf864",
+	"diagnostic.displayByAle": false,
+	"diagnostic.refreshOnInsertMode": false,
+	"diagnostic.checkCurrentLine": true,
+	"diagnostic.virtualTextPrefix": " ❯❯❯ ",
+	"diagnostic.virtualText": false,
+	"codeLens.enable": true,
+	"list.nextKeymap": "<C-d>",
+	"list.previousKeymap": "<C-e>",
+	"coc.preferences.formatOnSaveFiletypes": [
+		"json",
+		"python",
+		"perl"
+	],
+	"languageserver": {
+		"perl": {
+			"perlInc": [
+				"/home/song/perl5"
+			],
+			"enable": true,
+			"filetypes": [
+				".pm",
+				".pl"
+			],
+			"logLevel": 1
+		}
+	}
+}
