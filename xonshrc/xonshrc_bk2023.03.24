@@ -1,0 +1,47 @@
+# XONSH WEBCONFIG START
+$XONSH_COLOR_STYLE = 'monokai'
+# XONSH WEBCONFIG END
+# adjust some paths
+# # adjust some paths
+# $PATH.append('/home/scopatz/sandbox/bin')
+$PYTHONPATH=['/home/song/NutstoreFiles/2-Code/1-MyPython/0-MyPyPkg']
+# alias to quit AwesomeWM from the terminal
+# def _quit_awesome(args, stdin=None):
+    # lines = $(ps ux | grep "gnome-session --session=awesome").splitlines()
+    # pids = [l.split()[1] for l in lines]
+    # for pid in pids:
+        # kill @(pid)
+def addmypypath(path):
+	import sys
+	if path not in sys.path:
+		# pass
+	# else:
+		sys.path.append(path)
+	print(f'add the {path}')
+	print(sys.path)
+# aliases START
+aliases['vxshrc']=["vim","/home/song/.xonshrc"]
+aliases["rg"] = ["ranger"]
+
+# aliases END
+#
+# autostart START
+addmypypath($PYTHONPATH[0])
+
+# autostart END
+# some customization options, see https://xon.sh/envvars.html for details
+$MULTILINE_PROMPT = '`·.,¸,.·*¯`·.,¸,.·*¯'
+$XONSH_SHOW_TRACEBACK = True
+$XONSH_STORE_STDOUT = True
+$XONSH_HISTORY_MATCH_ANYWHERE = True
+$COMPLETIONS_CONFIRM = True
+$XONSH_AUTOPAIR = True
+# create_backendhistory
+import os.path
+import sys
+xonsh_ext_dir = os.path.expanduser('~/.config/xonsh')
+if os.path.isdir(xonsh_ext_dir):
+    sys.path.append(xonsh_ext_dir)
+
+from history_couchdb import CouchDBHistory
+$XONSH_HISTORY_BACKEND = CouchDBHistory
